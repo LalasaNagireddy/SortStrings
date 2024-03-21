@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>String Sorter</title>
+<style>
+    textarea {
+        width: 300px;
+        height: 200px;
+    }
+</style>
+</head>
+<body>
+<h1>String Sorter: </h1>
+<h3>Enter one string per line</h3>
+    <textarea id="inputStrings" placeholder="Enter strings, one per line"></textarea><br>
+<p>
+    <button onclick="sortStrings()">Sort</button><br>
+<p>
+    <textarea id="sortedStrings" readonly placeholder="Sorted strings will appear here"></textarea>
+
+    <script>
+        function sortStrings() {
+            // Get input strings from the textarea
+            let inputTextArea = document.getElementById("inputStrings");
+            let inputStrings = inputTextArea.value.split("\n");
+
+            // Sort the strings
+            let sortedStrings = inputStrings.filter(Boolean).sort();
+
+            // Display the sorted strings in the second textarea
+            let sortedTextArea = document.getElementById("sortedStrings");
+            sortedTextArea.value = sortedStrings.join("\n");
+        }
+    </script>
+</body>
+</html>	
